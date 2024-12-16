@@ -4,7 +4,7 @@ namespace AdeventOfCode.Tests;
 
 public class DistanceTest
 {
-    private int Distance(int value1, int value2)
+    public static int Distance(int value1, int value2)
     {
         return int.Abs(value2 - value1);
     }

@@ -13,9 +13,26 @@ public class DistanceListTest
         
         actual.Should().BeEquivalentTo ( new List<int>(){1});
     }
-
-    private List<int> Distance(List<int> list1, List<int> list2)
+    
+    
+    [Fact]
+    public void DistanceBetween2Lists2()
     {
-      return new List<int>() { 1};
+        var list1 = new List<int> { 1 };
+        var list2 = new List<int> { 3 };
+        var actual = Distance(list1, list2);
+        
+        actual.Should().BeEquivalentTo ( new List<int>(){2});
+    }
+
+    private static List<int> Distance(List<int> list1, List<int> list2)
+    {
+        var result = new List<int>();
+        for (var i = 0; i < list1.Count; i++)
+        {
+            result.Add(DistanceTest. Distance(list1[i], list2[i]));
+        } 
+
+        return result;
     }
 }
