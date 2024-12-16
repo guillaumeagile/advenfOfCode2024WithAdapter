@@ -4,6 +4,9 @@ public class Adapter
 {
     public (int, int) ParseInput(string input)
     {
-        return (1, 2);
+        var x = input.Split(" ")
+            .Where( x => !string.IsNullOrEmpty(x))
+            .Select( int.Parse).ToArray();
+        return (x[0], x[1]);
     }
 }

@@ -19,4 +19,14 @@ public class DrivenAdapterTests
      
     }
     
+    [Fact]
+    public void Test2()
+    {
+        var input = "2        3";
+        var adapter = new Adapter();
+        var actual = adapter.ParseInput(input);
+            
+        actual.Should().Be( (2, 3));
+    }
+    
 }
