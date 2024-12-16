@@ -20,4 +20,9 @@ public class LinesParser
     
     // TODO: essayer une version avec des Stream
     
+    // notre adapteur devrait pouvoir s'adapter à
+    // 1) lecture sur disque (fichier à plat)
+    // 2) lecture depuis S3 (MinIo)
+    // 3) lecture depuis une requete Mongo
+    
 }
