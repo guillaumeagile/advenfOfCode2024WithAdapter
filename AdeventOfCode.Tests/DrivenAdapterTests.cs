@@ -1,4 +1,3 @@
-using System.Data.Common;
 using AdventOfCode.Src;
 using FluentAssertions;
 
@@ -12,31 +11,29 @@ public class DrivenAdapterTests
         var input = "1 2";
         var adapter = new LinesParser();
         var actual = adapter.SingleLine(input);
-            
-        actual.Should().Be( (1, 2));
+
+        actual.Should().Be((1, 2));
         actual.Item1.Should().Be(1);
         actual.Item2.Should().Be(2);
-     
     }
-    
+
     [Fact]
     public void SingleLineTest2()
     {
         var input = "2        3";
         var adapter = new LinesParser();
         var actual = adapter.SingleLine(input);
-            
-        actual.Should().Be( (2, 3));
+
+        actual.Should().Be((2, 3));
     }
-    
+
     [Fact]
     public void Test3()
     {
-        var inputs  = new List<string>() { "2        3", "2 4" };
+        var inputs = new List<string> { "2        3", "2 4" };
         var adapter = new LinesParser();
         var actual = adapter.MultiLines(inputs);
-        var expected = new List<(int, int)>() { (2, 3), (2, 4) };    
-        actual.Should().BeEquivalentTo(  expected);
+        var expected = new List<(int, int)> { (2, 3), (2, 4) };
+        actual.Should().BeEquivalentTo(expected);
     }
-    
 }
