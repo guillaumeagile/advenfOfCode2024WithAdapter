@@ -7,7 +7,7 @@ namespace AdeventOfCode.Tests;
 public class DrivenAdapterTests
 {
     [Fact]
-    public void Test1()
+    public void SingleLineTest1()
     {
         var input = "1 2";
         var adapter = new LinesParser();
@@ -20,7 +20,7 @@ public class DrivenAdapterTests
     }
     
     [Fact]
-    public void Test2()
+    public void SingleLineTest2()
     {
         var input = "2        3";
         var adapter = new LinesParser();

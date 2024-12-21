@@ -7,12 +7,12 @@ public class CoreDomain
         return int.Abs(value2 - value1);
     }
     
-    public static List<int> Distance(List<int> list1, List<int> list2)
+    public static List<int> Distance(IEnumerable<int> list1, IEnumerable<int> list2)
     {
-        return list1.Select((value1, index) => CoreDomain.Distance(value1, list2[index])).ToList();
+        return list1.Select((value1, index) => CoreDomain.Distance(value1, list2.ElementAt(index)  )).ToList();
     }
     
-    public static int GlobalDistance(List<int> list1, List<int> list2)
+    public static int GlobalDistance(IEnumerable<int> list1, IEnumerable<int> list2)
     {
         return Distance(list1.SelfSort(), list2.SelfSort()).Sum();
         //.Aggregate((a, b) => a + b);
@@ -23,7 +23,7 @@ public class CoreDomain
 
 static class Extentions
 {
-    public static List<T> SelfSort<T>(this List<T> list)
+    public static List<T> SelfSort<T>(this IEnumerable<T> list)
     {
         return list.OrderBy(x => x).ToList();
     }
