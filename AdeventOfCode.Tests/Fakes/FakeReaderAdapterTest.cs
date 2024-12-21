@@ -10,7 +10,11 @@ public class FakeReaderAdapterTest
     {
         var adapter = new FakeReader();
         var actual = adapter.ReadFile("");
-        actual.Should().HaveCount(2);
+      //  actual.Should().HaveCount(2);
+      var iterator = actual.GetEnumerator();
+      iterator.MoveNext().Should().BeTrue();
+      iterator.MoveNext().Should().BeTrue();
+      iterator.MoveNext().Should().BeFalse();
     }
     
     
@@ -21,12 +25,16 @@ public class FakeReaderAdapterTest
         var actual =  adapter.ReadFilAsync("");
        
         var enumerator = actual.GetAsyncEnumerator();
-        var i = 0;
-        while (await enumerator.MoveNextAsync())
-        {
-            i++;
-        }
-        i.Should().Be(2);
+      
+       (await enumerator.MoveNextAsync()).Should().BeTrue();
+       (await enumerator.MoveNextAsync()).Should().BeTrue();
+       (await enumerator.MoveNextAsync()).Should().BeFalse();
+       
+       
+       
+       
+       
+        
     }
           
           
