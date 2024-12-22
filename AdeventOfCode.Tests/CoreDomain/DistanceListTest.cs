@@ -48,7 +48,7 @@ public class DistanceListTest
         actual.Should().Be(0);
     }
 
-
+        
     [Fact]
     public void GlobalDistanceBetween2ListsBug()
     {
