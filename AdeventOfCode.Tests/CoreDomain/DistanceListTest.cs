@@ -43,6 +43,7 @@ public class DistanceListTest
     {
         var list1 = new List<int> { 1, 3 };
         var list2 = new List<int> { 3, 1 };
+        
         var actual = CoreDomain.GlobalDistance(list1, list2);
 
         actual.Should().Be(0);

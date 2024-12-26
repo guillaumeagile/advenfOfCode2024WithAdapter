@@ -1,8 +1,7 @@
 using AdventOfCode.Src;
 using FluentAssertions;
-using Microsoft.Win32;
 
-namespace AdeventOfCode.Tests.OutsideIn;
+namespace AdventOfCode.Tests.OutsideIn;
 
 
 // ok, un mot poli pour ne pas dire End2End testing
