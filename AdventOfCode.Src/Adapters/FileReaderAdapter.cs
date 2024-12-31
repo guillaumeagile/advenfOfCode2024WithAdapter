@@ -1,13 +1,13 @@
 namespace AdeventOfCode.Tests;
 
-public class FileReaderAdapter : IFileReaderAdapter
+public class FileReaderAdapter(string inputTxt) : IFileReaderAdapter
 {
-    public IEnumerable<string> ReadFile(string inputTxt)
+    public IEnumerable<string> ReadFile( )
     {
         return File.ReadLines(inputTxt);
     }
     
-    public  IAsyncEnumerable<string> ReadFilAsync(string inputTxt)
+    public  IAsyncEnumerable<string> ReadFilAsync( )
     {
         return  File.ReadLinesAsync(inputTxt);
     }
