@@ -1,6 +1,6 @@
 ﻿namespace AdventOfCode.Src;
 
-public class CoreDomain
+public class CoreDomain 
 {
     public static int GlobalDistance(IEnumerable<int> list1, IEnumerable<int> list2)
      {
