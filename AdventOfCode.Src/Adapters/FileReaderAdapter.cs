@@ -1,14 +1,15 @@
-namespace AdeventOfCode.Tests;
-
-public class FileReaderAdapter(string inputTxt) : IFileReaderAdapter
+namespace AdeventOfCode.Tests
 {
-    public IEnumerable<string> ReadFile( )
+    public class FileReaderAdapter(string inputTxt) : I4ReadingFile
     {
-        return File.ReadLines(inputTxt);
-    }
+        public IEnumerable<string> ReadFile( )
+        {
+            return File.ReadLines(inputTxt);
+        }
     
-    public  IAsyncEnumerable<string> ReadFilAsync( )
-    {
-        return  File.ReadLinesAsync(inputTxt);
+        public  IAsyncEnumerable<string> ReadFilAsync( )
+        {
+            return  File.ReadLinesAsync(inputTxt);
+        }
     }
 }

@@ -1,34 +1,35 @@
-﻿namespace AdventOfCode.Src;
-
-public static class CoreDomain
+﻿namespace AdventOfCode.Src
 {
-    public static int GlobalDistance(IEnumerable<int> list1, IEnumerable<int> list2)
+    public static class CoreDomain
     {
-        return Distance(list1.SelfSort(), list2.SelfSort()).Sum();
-        //.Sum est équivalent à .Aggregate((a, b) => a + b);
+        public static int GlobalDistance(IEnumerable<int> list1, IEnumerable<int> list2)
+        {
+            return Distance(list1.SelfSort(), list2.SelfSort()).Sum();
+            //.Sum est équivalent à .Aggregate((a, b) => a + b);
+        }
+
+        public static int Distance(int value1, int value2)
+        {
+            return int.Abs(value2 - value1);
+        }
+
+        public static List<int> Distance(IEnumerable<int> list1, IEnumerable<int> list2)
+        {
+            return list1.Select((value1, index) => Distance(value1, list2.ElementAt(index))).ToList();
+        }
+
+
+        public static int GlobalDistance((IEnumerable<int> l1, IEnumerable<int> l2) extractedTwoColumns)
+        {
+            return GlobalDistance(extractedTwoColumns.l1, extractedTwoColumns.l2);
+        }
     }
 
-    public static int Distance(int value1, int value2)
+    internal static class Extensions
     {
-        return int.Abs(value2 - value1);
-    }
-
-    public static List<int> Distance(IEnumerable<int> list1, IEnumerable<int> list2)
-    {
-        return list1.Select((value1, index) => Distance(value1, list2.ElementAt(index))).ToList();
-    }
-
-
-    public static int GlobalDistance((IEnumerable<int> l1, IEnumerable<int> l2) extractedTwoColumns)
-    {
-        return GlobalDistance(extractedTwoColumns.l1, extractedTwoColumns.l2);
-    }
-}
-
-internal static class Extensions
-{
-    public static List<T> SelfSort<T>(this IEnumerable<T> list)
-    {
-        return list.OrderBy(x => x).ToList();
+        public static List<T> SelfSort<T>(this IEnumerable<T> list)
+        {
+            return list.OrderBy(x => x).ToList();
+        }
     }
 }

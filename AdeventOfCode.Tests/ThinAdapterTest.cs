@@ -1,15 +1,15 @@
-namespace AdeventOfCode.Tests;
-
-public class ThinAdapterTest
+namespace AdeventOfCode.Tests
 {
-    [Fact]
-    public void Test1()
+    public class ThinAdapterTest
     {
-        //   var adapter = new ThinAdapter();
-        //  adapter 
+        [Fact]
+        public void Test1()
+        {
+            //   var adapter = new ThinAdapter();
+            //  adapter 
+        }
     }
 }
-
 
 
 // LA question (et faire un schema)

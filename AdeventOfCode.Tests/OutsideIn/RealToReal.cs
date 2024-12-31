@@ -1,6 +1,7 @@
-namespace AdventOfCode.Tests.OutsideIn;
-
-public class RealToReal
+namespace AdventOfCode.Tests.OutsideIn
 {
+    public class RealToReal
+    {
     
+    }
 }
