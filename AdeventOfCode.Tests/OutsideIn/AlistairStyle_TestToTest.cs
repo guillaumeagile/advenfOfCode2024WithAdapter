@@ -13,34 +13,40 @@ public class AlistairStyle_TestToTest
         var drivenReader = new DummyReader( list1, list2 );
         var dummyDriver = new DummyDriver( drivenReader);
 
-        var actual = dummyDriver.Execute();
+        var actual = dummyDriver.DayOne();
         // pseudo monkey patching
         actual.Should().Be(2);
     }
 }
 
-public class DummyDriver
+public class DummyDriver : I4ProcessingData
 {
     public DummyDriver(DummyReader drivenReader)
     {
-        throw new NotImplementedException();
+      
     }
 
-    public int Execute()
+    public int DayOne()
     {
-        throw new NotImplementedException();
+        return 2;
     }
 }
 
-public class DummyReader(List<int> list1, List<int> list2) : IListExtractor
+public interface I4ProcessingData
 {
+    int DayOne();
+}
+
+public class DummyReader( List<int> list1, List<int> list2) : I4ExtractingColumns
+{
+    
     public (IEnumerable<int> l1, IEnumerable<int> l2) ExtractTwoColumns()
     {
-        throw new NotImplementedException();
+        return (list1, list2);
     }
 }
 
-public interface IListExtractor
+public interface I4ExtractingColumns
 {
     (IEnumerable<int> l1, IEnumerable<int> l2) ExtractTwoColumns();
 }

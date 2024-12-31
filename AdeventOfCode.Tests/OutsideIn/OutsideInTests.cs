@@ -7,13 +7,12 @@ namespace AdventOfCode.Tests.OutsideIn;
 // ok, un mot poli pour ne pas dire End2End testing
 public class OutsideInTests
 {
-    [Fact]
+    [Fact(Skip = "élucubrations de Guillaume....")]
     public void FailingFromTheOutside()
     {
         // mais qu'est ce que l'extérieur ????
         
         // depuis l' IHM ?  non! trop complexe
-        
         
         //restons dans le metier avec les Use Case
         UseCases useCases;
